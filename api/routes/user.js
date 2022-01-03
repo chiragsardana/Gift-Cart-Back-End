@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const { show, login, register, logout, getUserDetails, getParticularUserDetails } = require("../../controllers/user");
+const { LOGIN, REGISTER, PROFILE, LOGOUT, GETUSERDETAILS, GETUSERDETAILUSINGEMAIL } = require("../../utils/config").ROUTES.USER;
+router.get(PROFILE, show);
+router.post(LOGIN, login);
+router.post(REGISTER, register);
+router.post(LOGOUT, logout);
+router.get(GETUSERDETAILS, getUserDetails);
+router.get(GETUSERDETAILUSINGEMAIL, getParticularUserDetails);
+module.exports = router;
